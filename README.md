@@ -1,50 +1,36 @@
-# Welcome to your Expo app 👋
+# enode-sample
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+## Get started with enode-sample
 
-1. Install dependencies
+1. In the project root, install dependencies
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Include Link UI
 
-   ```bash
-    npx expo start
-   ```
+You'll need to properly include Enode's Link SDKs for builds to work. 
 
-In the output, you'll find options to open the app in a
+* For iOS, follow Enode's guide on how to [Set up your Xcode project](https://developers.enode.com/docs/link-sdks/ios#set-up-your-xcode-project). You will need to open the Xcode Workspace under the `/ios` folder.
+* For Android, follow Enode's guide on how to [Include the SDK](https://developers.enode.com/docs/link-sdks/android#include-the-sdk) in your Android project. You will need to open the Android project under the `/android` folder.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+3. Insert a `linkToken`
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+In `/app/(tabs)/index.tsx`, replace `<insert-link-token-here>` with an actual [`linkToken`](https://developers.enode.com/docs/link-sdks/introduction#create-a-link-session) you received from the Enode API. 
 
-## Get a fresh project
-
-When you're ready, run:
+4. Run the app
 
 ```bash
-npm run reset-project
+npx expo run:ios
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+```bash
+npx expo run:android
+```
 
 ## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project helps you get started. You can learn more about React Native in the [Enode docs](https://developers.enode.com/docs/link-sdks/react-native).

@@ -5,13 +5,16 @@ export default function LinkUI({ token }: { token: string }) {
   return (
     <View>
       <Button
-        title="Connect your EV"
+        title="Launch Link UI"
         onPress={() => {
           linkUI.show(token, (code: string, errMsg: string) => {
             switch (code) {
               case "success":
                 // handle success
                 console.log("success!");
+
+                // here, fetch device details from your server
+                // and do something with them
                 break;
 
               case "cancelledByUser":
